@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<style>
+	  body {
+	  	background: #EFE4D5;
+	  	padding:0px;
+	  	margin:0px;
+	  	font-family: 'Merriweather', serif;
+	  }
+	  
+	  header > h1 {
+	  	color: #5F5B55;
+  		word-wrap: break-word;
+	  	display: inline;
+	  }
+	  
+	  nav, h1, h2 {
+	  	font-family: 'Open Sans', sans-serif;
+	  }
+	  
+	  header a:link, 
+	  header a:visited, 
+	  header a:active, 
+	  header a:hover {
+	  	text-decoration: none;
+	  	color: inherit;
+	  }
+
+
+	  .content p, .content li {
+	  	font-size: 13px;
+	  	color: #5F5B55;
+	  }
+	  .content h2 {
+	  	color: #5F5B55;
+	  	font-size: 24px;
+	  }
+
+	  footer {
+	  	color: #efe4d5;
+	  	background: #8F897F;
+	  	font-size: 14px;
+	  	padding-left: 30px;
+	  	padding-top: 20px;
+	  	padding-bottom: 20px;
+	  }
+
+	  @media (max-width: 768px) {
+	  	body {
+	  		padding: 20px;
+	  	}
+	  	header {
+	  		background: inherit;
+	  		padding-bottom: 10px;
+	  	}
+		header .menu-toggle {
+	  	  position: relative;
+		  width: 50px;
+		  height: 50px;
+		  color: #EFE4D5;
+		  font-size: 33px;
+		  background-color: rgba(95, 91, 85, 1);
+		  border: solid 1px rgba(239, 228, 213, 1);
+		  border-radius: 4px;
+		  cursor: pointer;
+		  z-index: 2;
+		  box-sizing: border-box;
+	    }
+
+	    nav {
+	    	display: none;
+	    	z-index: 20;
+	    }
+
+	  	nav {
+	  		width: 100%;
+	  		position:absolute;
+	  		right:20px;
+	  		font-family: 'Open Sans', sans-serif;
+	  	}
+	  	nav > ul {
+	  		display: block;
+		  	list-style-type: none;
+
+	  	}
+	  	nav > ul > li {
+	  		border: 1px solid #EFE4D5;
+	  		background: rgba(95, 91, 85, 0.93);
+		  	text-transform: uppercase;
+	  		color: #EFE4D5;
+		  	display: -ms-flex; display: -webkit-flex; display: flex;
+	  	}
+	  	nav > ul > li > a {
+	  		flex: 1;
+	  		padding: 15px;
+	  	}
+	    nav > ul > li.active {
+	  	  background: rgba(169, 162, 150, 0.93)
+	    }
+
+	    .content h2 {
+  		  margin-top: 20px;	
+   	    }
+   	    footer {
+   	    	margin-top: 5px;
+   	    }
+	  }
+	  @media (min-width: 769px) {
+		  header {
+		  	background: #BFB6AA;
+		  	padding-top: 40px;
+		  	padding-left: 70px;
+		  	padding-bottom: 10px;
+		  }
+		  header h1 {
+		  	white-space: nowrap;
+		  }
+		  header .menu-toggle {
+		  	display:none;
+		  }
+		  nav {
+		  	display: inline;
+	    	line-height: 53px;
+		  }
+		  
+		  nav > ul {
+		  	display: inline;
+		  	list-style-type: none;
+		  	color: #857F75;
+		  }
+		  nav > ul > li {
+		  	display: inline;
+		  	border-right: 1px solid #2a2f2a;
+		  	margin-left: 20px;
+		  	padding-right: 20px;
+		  	text-transform: uppercase;
+		  }
+		  nav > ul > li:last-child {
+		  	border-right: none;
+		  }
+		  nav > ul > li.active > a {
+		  	color: #2F2D2A;
+		  }
+		  nav > ul > li > a:hover {
+		  	color: #2F2D2A;
+		  }
+		  .content {
+		  	padding-top: 20px;
+		  	padding-left: 70px;
+		  	padding-right: 70px;
+		  	padding-bottom: 10px;
+		  }
+		  .content .tab-pane {
+	  		padding-right: 70px;
+	  	  }
+	  	  .content h2 {
+		  	margin-right: 20%;
+		  	padding: 0 20px 20px 0px;
+		  	margin-top: 0;
+		  }
+		  .content p {
+		  	margin-bottom: 40px;
+		  }
+
+		  footer {
+		  	margin-left:70px;
+		  	margin-right:70px;
+		  }
+
+	  }
+
+	  .content img {
+	  	padding: 5px 0px 5px 0px;
+	  }
+	  .content img:first-child {
+	  	padding-top: 0;
+	  }
+
+  	  #home img {
+	  	padding: 0px 15px 5px 15px;
+	  }
+
+	  .content ul {
+	  	list-style-type: none;
+	  	padding: 0px;
+	  }
+
+	  .content li {
+	  	margin-bottom: 7px;
+	  }
+	  
+	  #publications h2 {
+	  	font-size: 15px;
+	  	font-weight: normal;
+	  }
+	</style>
+
+</head>
+<body>
+
+<header>
+	<div class="pull-right">
+		<button class="menu-toggle " role="button">&#9776;</button>
+		<nav id="menu">
+			<ul role="tablist">
+				<li role="presentation"><a role="tab" data-toggle="tab" href="#home">Home</a></li>
+				<li role="presentation"><a role="tab" data-toggle="tab" href="#research">Research</a></li>
+				<li role="presentation"><a role="tab" data-toggle="tab" href="#teaching">Teaching</a></li>
+				<li role="presentation"><a role="tab" data-toggle="tab" href="#publications">Publications</a></li>
+			</ul>
+		</nav>
+	</div>
+	<h1><a data-toggle="tab" href="#home">Kimberley Kinder, PhD</a></h1>
+</header>
+
+<div class="content tab-content">
+	<div role="tabpanel" class="tab-pane fade clearfix" id="home">
+		<div><div class="row">
+			<img class="col-sm-5 img-responsive" src="img/260.jpg">
+
+			<div class="col-sm-7">
+				<h2>About Me</h2>
+				<p>
+					I am an Assistant Professor of Urban Planning at the University of Michgian. I earned my bachelors degree in architecture and masters degree in urban planning from Carnegie Mellon University. I then received a Masters of Science in Geography from the University of Oxford and a PhD in Geography from the University of California, Berkeley. My research focuses on the cultural, economic, and political aspects of urban landscapes. I am the author of two books on the subject, and I have a third book project currently under development.
+				</p>
+
+				<h2>Contact Information</h2>
+				<p>
+					Dr. Kimberley Kinder<br/>
+					Assistant Professor of Urban and Regional Research<br/>
+					University of Michigan<br/>
+					2000 Bonisteel Boulevard, Suite 2150<br/>
+					Ann Arbor, MI 48109-2609<br/>
+					734-615-7252<br/>
+					kkinder@umich.edu<br/>
+					<br/>
+					https://taubmancollege.umich.edu/faculty/directory/kimberley-kinder
+				</p>
+			</div>
+		</div></div>
+	</div>
+
+	<div role="tabpanel" class="tab-pane fade clearfix" id="research">
+		<div><div class="row">
+			<div class="col-sm-5">
+				<img class="img-responsive" src="img/222.jpg">
+				<img class="hidden-xs img-responsive" src="img/9df.jpg">
+				<img class="hidden-xs img-responsive" src="img/077.jpg">
+			</div>
+			<div class="col-sm-7">
+				<h2>Research</h2>
+			 	<p>
+					My research focuses on the cultural, economic, and political aspects of urban space. City planners, government officials, and market investors build environments with specific goals in mind, but the people living in those landscapes have ideas and objectives of their own. Instead of passively accepting cities planned from above, residents are better understood as active agents using everyday practices and micro-scale interventions to incrementally reshape the texture, function, and symbolism of cities from below. Sometimes, these practices are intended as acts of resistance that intentionally challenge the status quo, but residents also use place-based interventions to reinforce normative worldviews (for better or worse) and to stabilize neighborhoods against change. In all cases, understanding the on-the-ground experience of city life as a lived phenomenon constantly undergoing micro-scale reformulation is crucial, both for theorizing the trajectory of urban development and for articulating the economic, cultural, and political stakes of city-making.
+				</p>
+			</div>
+			<div class="col-sm-5">
+				<img class="visible-xs img-responsive" src="img/9df.jpg">
+				<img class="visible-xs img-responsive" src="img/077.jpg">
+			</div>
+		</div></div>
+	</div>
+
+	<div role="tabpanel" class="tab-pane fade clearfix" id="teaching">
+		<div><div class="row">
+			<div class="col-sm-5">
+				<img class="img-responsive" src="img/4a7.jpg">
+				<img class="img-responsive hidden-xs" src="img/597.jpg">
+				<img class="img-responsive hidden-xs" src="img/f26.jpg">
+				<img class="img-responsive hidden-xs" src="img/b8c.jpg">
+			</div>
+			<div class="col-sm-7">
+				<h2>Teaching</h2>
+			 	<p>
+					I teach courses on urban theory and urban place-making. My curriculum highlights the messy interconnections that suture physical forms and social processes together. In my classroom, alongside canonical city planning texts, I also teach literature from sociology, anthropology, history, and geography, and I expose students to a wide range of case studies from domestic and international contexts. This comparative, interdisciplinary approach encourages students to evaluate planning techniques from many perspectives, in many contexts, and with many possible metrics of success. I also encourage students to hone their critical reading, writing, and communication skills. Students in my classes routinely prepare written responses to course readings and then use class time presenting ideas to peers, asking probing questions, and engaging in group debates. These techniques, which prioritize the development of critical thinking abilities alongside city planning skills, help students gain a broad understanding of the direct and indirect political, economic, and cultural implications of their professional work.
+				</p>
+				<h2>
+					Courses Taught
+				</h2>
+				<ul>
+					<li>Urban Planning 575: Metropolitan Structure</li>
+					<li>Urban Planning / Architecture 519: Theory of Urban Design</li>
+					<li>Urban Planning 696: Planning for Healthy Cities</li>
+					<li>Natural Resources and Environment 677: Special Seminar in Water Politics</li>
+					<li>Urban Planning 696: Social Justice and the City</li>
+					<li>Geography 138: Political Ecology of the Third World</li>
+					<li>Geography 130: Food and the Environment (Graduate Student Instructor)</li>
+				</ul>
+			</div>
+			<div class="col-sm-5">
+				<img class="img-responsive visible-xs" src="img/597.jpg">
+				<img class="img-responsive visible-xs" src="img/f26.jpg">
+				<img class="img-responsive visible-xs" src="img/b8c.jpg">
+			</div>
+		</div></div>
+	</div>
+
+	<div role="tabpanel" class="tab-pane fade" id="publications">
+		<div>
+			<div class="row">
+				<div class="col-sm-4">
+					<img  class="img-responsive" src="img/201.jpg">
+				</div>
+				<div class="col-sm-8">
+					<h2>Kinder, Kimberley. <em>The Politics of Urban Water: Changing Waterscapes in Amsterdam.</em> University of Georgia Press, 2015.</h2>
+
+					<p>
+						Fifty years ago, urban waterfronts were industrial, polluted, and diseased. Today, luxury homes and shops line riverbanks, harbors, and lakes across Europe and North America. The visual drama of physical reconstruction makes this transition look swift and decisive, but reimaging water is a slow process, punctuated by small cultural shifts and informal spatial seizures that change the meaning of wet urban spaces. In The Politics of Urban Water, Kimberley Kinder explores how active residents in Amsterdam deployed their cityscape when rallying around these concerns, turning space into a vehicle for social reform.
+					</p>
+
+					<p>
+						While market dynamics certainly contributed to the transformation of Amsterdam&rsquo;s shorelines, squatters, partiers, artists, historians, environmentalists, tourists, reporters, and government officials also played crucial roles in bringing waterscapes to life. Their interventions pulled water in new directions, connecting it to political discussions about affordable housing, cultural tolerance, climate change, and national identity. Over time, these political valences have become embedded in laws, norms, symbols, markets, and landscapes, bringing rich undercurrents of friction to urban shores. Amsterdam&rsquo;s development serves as both an inspiration and a cautionary tale for cities across Europe and North America where rapid new growth creates similar pressures and anxieties.
+					</p>
+				</div>
+			</div>
+
+			<h2>Kinder, Kimberley. <em>DIY Detroit: Making Do in a City without Services.</em> University of Minnesota Press, forthcoming, April 2016.</h2>
+
+			<div class="row">
+				<div class="col-sm-9 col-sm-offset-2">
+					<p>
+						Detroit has a reputation for being a quintessential DIY city, a place where residents sweep public streets, board empty buildings, mow vacant lots, and maintain public parks. Although extreme, Detroit is not alone. The rise of austerity- and market-based governance has routinized the experience of living with unavailable or unaffordable services in urban areas nationwide. As neighborhood conditions deteriorate, many residents attempt to &ldquo;domesticate&rdquo; city services by using household labor to compensate for market and government failures. These fragmented but widespread responses to collective problems create new urban logics by organizing people in space, mediating access to collective resources, and transforming the normative expectations that residents have about their environments. Self-provisioning the city is easy to romanticize, but it is also a cautionary tale. This politics of practice involves short-term actions people take when few other options seem available with the hope that comprehensive solutions to disinvestment, racism, and inequality will eventually emerge.
+					</p>
+				</div>
+			</div>
+
+			<h2>Kinder, Kimberley. "Guerrilla-Style Defensive Architecture in Detroit: A Self-Provisioned Security Strategy in a Neoliberal Space of Disinvestment." International Journal of Urban and Regional Research 38, no. 5 (2014): 1767-1784.</h2>
+
+			<div class="row">
+				<div class="col-sm-9 col-sm-offset-2">
+					<p>
+						Self-provisioning has long been an important component of urban political economic processes. However, it has recently become a central feature of grassroots urban governance strategies, as well. In tumultuous cities of the 21st century, with governments either unwilling or unable to effectively enforce zoning laws, police neighborhoods, or manage infrastructure, some householders have begun performing these services instead. This article examines one subset of self-provisioning practices that has emerged in southwest Detroit where residents have taken steps to secure abandoned housing as a means of exerting social control over their living environment. These actions embody many contradictions and ethical dilemmas, and the intimate scale of action has left the structural production of disinvestment in places like Detroit largely unchecked. Nevertheless, these guerilla-style spatial interventions have emerged as critically important response strategies helping residents reduce their vulnerability and stabilize their blocks even as other nearby areas continue to experience decline.
+					<p>
+
+					<p>
+						http://onlinelibrary.wiley.com/doi/10.1111/1468-2427.12158/abstract
+					</p>
+				</div>
+			</div>
+
+			<h2>Kinder, Kimberley. "Planning by Intermediaries: Making Cities Make Nature in Amsterdam." <em>Environment and Planning A</em> 43, no. 10 (2011): 2435&mdash;2451.</h2>
+
+			<div class="row">
+				<div class="col-sm-9 col-sm-offset-2">
+					
+
+					<p>
+						This analysis of urban wetland restoration in the Netherlands examines how theories of distributed agency are changing the way planners approach city-building tasks. Illusions of a static, prehuman nature are falling by the wayside, and the negative environmental consequences of urban expansion are gaining notoriety. Green Design strategies that, among other things, espouse bringing nature back into the city alleviate many problems. But ecoconscious planners working on Amsterdam&rsquo;s IJburg neighborhood have set their sights higher by attempting to turn cities into nature&rsquo;s womb. And instead of making this nature directly through nurseries and fisheries, planners are instead working to create a field of action that will spontaneously create wild nature at a considerable distance from planners&rsquo; hands. In reviewing these experiments, this paper shows how planners marshal lake currents, plant spores, and flying birds alongside bulldozers and cranes to build homes and make wetlands.
+					</p>
+
+					<p>
+						http://www.envplan.com/abstract.cgi?id=a4464
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+	&copy; 2015 by Kimberley Kinder.
+</footer>
+
+
+<div>
+
+
+</div>
+
+<script>
+$(document).ready(function() {
+  $('a[data-toggle="tab"]').on('click', function(e) {
+  	if ($(window).width() < 768) {
+  		$("#menu").hide();
+  	}
+    history.pushState(null, null, $(this).attr('href'));
+  });
+  function navigate(hash) {
+  	if (!hash) {
+  		hash = "#home";
+  	}
+	
+	var activeTab = $('[href=' + hash + ']');
+	if (!activeTab.length) {
+		activeTab = $('[href=#home]');
+	}
+	activeTab.tab('show');
+  }
+  // navigate to a tab when the history changes
+  window.addEventListener("popstate", function(e) {
+  	navigate(location.hash);
+  });
+  navigate(location.hash)
+});
+
+$("button.menu-toggle").on('click', function(e) {
+	$("#menu").slideToggle(200);
+})
+
+$(window).resize(function() {
+	if ($(window).width() > 768) {
+  		$("#menu").show();
+  	} else {
+  		$("#menu").hide();
+  	}
+});
+
+</script>
+
+</body>
+</html>
